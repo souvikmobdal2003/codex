@@ -48,13 +48,12 @@ def index():
     feedbacks = c.fetchall()
     conn.close()
 
-    # Path to index.html (same directory as this script)
+    # Load HTML file
     html_path = os.path.join(os.path.dirname(__file__), "index.html")
-
-    # Read and inject HTML
     with open(html_path, 'r', encoding='utf-8') as file:
         html = file.read()
 
+    # Inject feedback into HTML
     feedback_html = ""
     for name, rating, comments in feedbacks:
         stars = "⭐" * int(rating) if str(rating).isdigit() else ""
@@ -68,6 +67,17 @@ def index():
 
     full_html = html.replace("<!--FEEDBACK_LIST-->", feedback_html)
     return render_template_string(full_html)
+
+# ---------- Skill Page Route ----------
+@app.route('/skill')
+def skill():
+    try:
+        skill_path = os.path.join(os.path.dirname(__file__), "templates", "skill.html")
+        with open(skill_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return render_template_string(content)
+    except Exception as e:
+        return f"Error loading skill page: {e}"
 
 # ---------- Static Files ----------
 @app.route('/static/<path:path>')

@@ -33,11 +33,12 @@
 </head>
 <body>
 
-   <!-- The rest of the certifications -->
-   <h2 class="text-center  p-3 mt-4">The Rest of the Certifications</h2>
+<h2 class="text-center p-3 mt-4">The Rest of the Certifications</h2>
 
 <!-- Back Button -->
-<button class="back-btn"><a href="portfolio-website/index.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+<button class="back-btn">
+    <a href="/"><i class="fa-solid fa-arrow-left"></i></a>
+</button>
 
 <div class="container mt-5">
     <div class="row g-4">
@@ -80,10 +81,8 @@
                 <h5 class="modal-title">Digital Marketing Certification</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-
-            
             <div class="modal-body text-center">
-                <img src="dm.jpg" class="modal-img" alt="Digital Marketing Certificate">
+                <img src="{{ url_for('static', filename='dm.jpg') }}" class="modal-img" alt="Digital Marketing Certificate">
                 <p class="mt-2">Completion Date: 1 October 2024</p>
             </div>
         </div>
@@ -117,7 +116,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="pythoncirtificate.jpg" class="modal-img" alt="Python Certificate">
+                <img src="{{ url_for('static', filename='pythoncirtificate.jpg') }}" class="modal-img" alt="Python Certificate">
                 <p class="mt-2">Completion Date: 11 December 2024</p>
             </div>
         </div>
@@ -143,7 +142,6 @@
     </div>
 </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
