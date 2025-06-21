@@ -118,15 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // 7. Greeting Message
-  try {
-    const hours = new Date().getHours();
-    const greeting = hours < 12 ? "Good Morning!" : hours < 18 ? "Good Afternoon!" : "Good Evening!";
-    const greetingEl = document.getElementById("greeting");
-    if (greetingEl) greetingEl.innerText = greeting;
-  } catch (e) {
-    console.warn("Greeting error:", e);
-  }
+
 
  // EmailJS init with your public key
   emailjs.init("OXDPxM_Nr4D5SVynm");
